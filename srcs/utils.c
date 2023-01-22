@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <aaduan-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/22 16:49:53 by aaduan-b          #+#    #+#             */
+/*   Updated: 2023/01/22 16:50:28 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/philo.h"
 
 long	ft_atol(char const *str)
@@ -24,11 +36,11 @@ long	ft_atol(char const *str)
 	return (nb * sign);
 }
 
-int ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
-    if (b > a)
-        return (b);
-    return (a);
+	if (b > a)
+		return (b);
+	return (a);
 }
 
 int	ft_min(int a, int b)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simulator.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <aaduan-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/22 16:49:42 by aaduan-b          #+#    #+#             */
+/*   Updated: 2023/01/22 16:49:49 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/philo.h"
 
 static void	ft_destroy_mutexes(t_philo *philo, t_data *data)
@@ -11,7 +23,6 @@ static void	ft_destroy_mutexes(t_philo *philo, t_data *data)
 	while (i < M_NUM)
 		pthread_mutex_destroy (&data->mutex[i++]);
 }
-
 
 static int	ft_are_done(t_philo *philo, t_data *data)
 {

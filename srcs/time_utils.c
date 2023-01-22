@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   time_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <aaduan-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/22 16:44:41 by aaduan-b          #+#    #+#             */
+/*   Updated: 2023/01/22 16:44:42 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/philo.h"
 
 unsigned long	ft_abs_time(void)
@@ -23,24 +35,5 @@ unsigned long	ft_rel_time(unsigned long begin)
 
 void	ft_msleep(unsigned long msec)
 {
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
-	usleep (msec * 50);
+	usleep (msec * 1000);
 }

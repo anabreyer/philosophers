@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaduan-b <aaduan-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/22 16:49:04 by aaduan-b          #+#    #+#             */
+/*   Updated: 2023/01/22 16:49:16 by aaduan-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/philo.h"
 
 int	ft_init_philo(t_philo **philo, t_data *data)
@@ -81,4 +93,3 @@ int	ft_init(t_philo **philo, t_data **data, int ac, char const *const *av)
 		return (FAILURE);
 	return (SUCCESS);
 }
-
