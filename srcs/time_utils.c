@@ -19,7 +19,7 @@ unsigned long	ft_abs_time(void)
 	unsigned long	u;
 
 	if (gettimeofday (&time, NULL) == -1)
-		write (2, "Error: GETTIMEOFDAY(2)\n", 28);
+		write (2, "Error: GETTIMEOFDAY(2)\n", 23);
 	s = time.tv_sec * 1000;
 	u = time.tv_usec / 1000;
 	return (s + u);
