@@ -33,7 +33,23 @@ unsigned long	ft_rel_time(unsigned long begin)
 	return (abs_time - begin);
 }
 
-void	ft_msleep(unsigned long msec)
+void 	ft_msleep(unsigned long msec)
 {
-	usleep (msec * 1000);
+	unsigned long cur;
+
+	cur = ft_abs_time();
+	while(ft_abs_time() - cur > msec)
+		usleep(10);
 }
+
+// void	ft_msleep(unsigned long msec)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	while (i <= 20)
+// 	{
+// 		usleep (msec * 50);
+// 		i++;
+// 	}
+// }

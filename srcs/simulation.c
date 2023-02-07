@@ -14,14 +14,18 @@
 
 static int	ft_start_eating(t_philo *self)
 {
+	//printf("FORK1 LOCK-s\n");
 	pthread_mutex_lock (&self->fork[ft_min (self->lfork, self->rfork)]);
+	//printf("FORK1 LOCK-e\n");
 	ft_print (self, "has taken a fork");
 	if (self->lfork == self->rfork)
 	{
 		pthread_mutex_unlock (&self->fork[ft_min (self->lfork, self->rfork)]);
 		return (FAILURE);
 	}
+	//printf("FORK2 LOCK-s\n");
 	pthread_mutex_lock (&self->fork[ft_max (self->lfork, self->rfork)]);
+	//printf("FORK2 LOCK-e\n");
 	ft_print (self, "has taken a fork");
 	ft_print (self, "is eating");
 	return (SUCCESS);
@@ -30,9 +34,15 @@ static int	ft_start_eating(t_philo *self)
 static int	ft_finish_eating(t_philo *self)
 {
 	ft_print (self, "is sleeping");
+	//printf("FORK2 UNLOCK-s\n");
 	pthread_mutex_unlock (&self->fork[ft_max (self->lfork, self->rfork)]);
+	//printf("FORK2 UNLOCK-e\n");
+	//printf("FORK1 UNLOCK-s\n");
 	pthread_mutex_unlock (&self->fork[ft_min (self->lfork, self->rfork)]);
-	ft_msleep (self->data->time_slp);
+	//printf("FORK1 UNLOCK-e\n");
+
+	// usleep (self->data->time_slp * 1000);
+	ft_msleep(self->data->time_eat);
 	return (SUCCESS);
 }
 
@@ -49,7 +59,8 @@ static int	ft_eating(t_philo *self)
 		ft_finish_eating (self);
 		return (FAILURE);
 	}
-	ft_msleep (self->data->time_eat);
+	// usleep (self->data->time_eat * 1000);
+	ft_msleep(self->data->time_eat);
 	ft_finish_eating (self);
 	return (SUCCESS);
 }
@@ -62,7 +73,8 @@ void	*ft_simulation(void *arg)
 	if (self->id % 2 == 0)
 	{
 		ft_print (self, "is thinking");
-		ft_msleep (self->data->time_eat);
+		ft_msleep(self->data->time_eat);
+		// usleep (self->data->time_eat * 1000);
 	}
 	while (1)
 	{
@@ -71,7 +83,8 @@ void	*ft_simulation(void *arg)
 		if (ft_eating (self) != SUCCESS)
 			break ;
 		ft_print (self, "is thinking");
-		ft_msleep (self->data->time_thk);
+		ft_msleep(self->data->time_eat);
+		// usleep(self->data->time_thk * 1000);
 	}
 	return (NULL);
 }
