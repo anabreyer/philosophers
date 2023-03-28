@@ -1,7 +1,7 @@
 NAME = philo
 
 CC = gcc -g3
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 LDLIBS      := -lpthread
 
 INC = ./include/philo.h

@@ -30,7 +30,7 @@ int	ft_check_args(int ac, char const *const *av)
 {
 	if (ac < 5)
 	{
-		write (2, "Error: Too few arguments,\n", 26);
+		write (2, "Error: Too few arguments.\n", 26);
 		return (FAILURE);
 	}
 	if (ac > 6)
